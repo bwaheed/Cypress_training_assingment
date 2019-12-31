@@ -20,7 +20,8 @@
     "url": "https://github.com/kashifch/cypress_training/issues"
   },
   "homepage": "https://github.com/kashifch/cypress_training#readme",
-  "dependencies": {
+  "dependencies": {},
+  "devDependencies": {
     "cypress": "^3.8.0"
   }
 }

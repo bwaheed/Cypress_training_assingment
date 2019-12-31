@@ -1,4 +1,5 @@
 {
     "baseUrl": "https://courses.stage.edx.org/",
-    "integrationFolder": "cypress/integration/lecture1/tests"
+    "integrationFolder": "cypress/integration/lecture2/tests"
+
 }

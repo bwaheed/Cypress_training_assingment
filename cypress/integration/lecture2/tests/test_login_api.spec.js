@@ -1,6 +1,6 @@
-import login from '../helpers/login_apii'
+import login from '../helpers/login_api'
 
-describe('Login tests', () => {
+describe('register tests', () => {
     before(() => {
         login.loginApi()
     })
