@@ -8,7 +8,4 @@ class Utils{
         return string;
     }
  }
-
- 
-
 export default Utils
