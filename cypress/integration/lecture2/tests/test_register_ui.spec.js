@@ -24,7 +24,7 @@ describe('Register test with valid credentials', () => {
 })
 
 //Handing negative test-cases through UI using Fixtures. 
-describe('Register test with wrong Email address', () => {
+describe('Handing negative test-cases through UI using Fixtures', () => {
     beforeEach(()=> {
         cy.visit('/')
     })
@@ -34,7 +34,7 @@ describe('Register test with wrong Email address', () => {
         cy.fixture('credentials').then(($userCred) => {
             register.fillRegisterForm($userCred.invalid_email.email,$userCred.invalid_email.name,$userCred.invalid_email.username,$userCred.invalid_email.pass,$userCred.invalid_email.country)
             register.submitRegisterForm()
-            register.errormsg().should('contain', 'We couldn\'t create your account.') 
+            register.fielderrormsg().should('contain', 'is not a valid email address') 
         })
     })
     it('lets the user register to the application with invalid Username field', () => {
@@ -43,7 +43,7 @@ describe('Register test with wrong Email address', () => {
         cy.fixture('credentials').then(($userCred) => {
             register.fillRegisterForm($userCred.invalid_username.email,$userCred.invalid_username.name,$userCred.invalid_username.username,$userCred.invalid_username.pass,$userCred.invalid_username.country)
             register.submitRegisterForm()
-            register.errormsg().should('contain', 'We couldn\'t create your account.') 
+            register.fielderrormsg().should('contain', 'Usernames can only contain letters (A-Z, a-z), numerals (0-9), underscores (_), and hyphens (-).') 
         })
     }) 
     it('lets the user register to the application with invalid password field', () => {
@@ -52,7 +52,7 @@ describe('Register test with wrong Email address', () => {
         cy.fixture('credentials').then(($userCred) => {
             register.fillRegisterForm($userCred.invalid_pass.email,$userCred.invalid_pass.name,$userCred.invalid_pass.username,$userCred.invalid_pass.pass,$userCred.invalid_pass.country)
             register.submitRegisterForm()
-            register.errormsg().should('contain', 'We couldn\'t create your account.') 
+            register.fielderrormsg().should('contain', 'This password must contain at least 1 number.') 
         })
     }) 
     it('lets the user register to the application with invalid country field', () => {
@@ -61,7 +61,7 @@ describe('Register test with wrong Email address', () => {
         cy.fixture('credentials').then(($userCred) => {
             register.fillRegisterForm($userCred.invalid_country.email,$userCred.invalid_country.name,$userCred.invalid_country.username,$userCred.invalid_country.pass,$userCred.invalid_country.country)
             register.submitRegisterForm()
-            register.errormsg().should('contain', 'We couldn\'t create your account.') 
+            register.fielderrormsg().should('contain', 'Select your country or region of residence') 
         })
     })      
 })

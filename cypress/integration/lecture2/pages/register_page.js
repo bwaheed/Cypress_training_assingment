@@ -29,11 +29,8 @@ class RegisterPage {
     errormsg() {
         return cy.get('.message-title').invoke('text')
     }
-    emailerrormsg() {
+    fielderrormsg() {
         return cy.get('ul.message-copy > li').invoke('text')
-    }
-    emailerrormsg2(){
-        return cy.get('.label-required error').invoke('text')
     }
 }
 
