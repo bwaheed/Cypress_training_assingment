@@ -52,7 +52,7 @@ describe('Handing negative test-cases through UI using Fixtures', () => {
         cy.fixture('credentials').then(($userCred) => {
             register.fillRegisterForm($userCred.invalid_pass.email,$userCred.invalid_pass.name,$userCred.invalid_pass.username,$userCred.invalid_pass.pass,$userCred.invalid_pass.country)
             register.submitRegisterForm()
-            register.fielderrormsg().should('contain', 'This password must contain at least 1 number.') 
+            register.fielderrormsg().should('contain', 'Password must have at least 8 characters') 
         })
     }) 
     it('lets the user register to the application with invalid country field', () => {
